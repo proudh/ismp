@@ -3,9 +3,7 @@ import superagentPromise from 'superagent-promise';
 
 const superagent = superagentPromise(_superagent, global.Promise);
 
-// TODO: What's our API root?
-// We can use this for now. Also, please note that for now it has to be http, not https.
-const API_ROOT = 'http://localhost:8000';
+const API_ROOT = process.env.REACT_APP_API_HOST;
 
 const encode = encodeURIComponent;
 const responseBody = res => res.body;
@@ -59,4 +57,4 @@ export default {
   setToken: _token => {
     token = _token;
   }
-};
+;
